@@ -14,20 +14,24 @@ driver = webdriver.Chrome(chrome_driver_path)
 driver.get(URL)
 
 cookie = driver.find_element(By.ID, "cookie")
-buy_cursor = driver.find_element(By.ID, "buyCursor")
-buy_grandma = driver.find_element(By.ID, "buyGrandma")
-buy_factory = driver.find_element(By.ID, "buyFactory")
-buy_mine = driver.find_element(By.ID, "buyMine")
-buy_shipment = driver.find_element(By.ID, "buyShipment")
-buy_alchemy_lab = driver.find_element(By.ID, "buyAlchemy lab")
-buy_portal = driver.find_element(By.ID, "buyPortal")
-buy_time_machine = driver.find_element(By.ID, "buyTime machine")
+toggle_numbers = driver.find_element(By.ID, "toggleNumbers")
+toggle_flash = driver.find_element(By.ID, "toggleFlash")
+toggle_numbers.click()
+toggle_flash.click()
+
+last_bought_item = "buyCursor"
+buy_items = ["buyCursor", "buyGrandma", "buyFactory", "buyMine", "buyShipment", "buyAlchemy lab", "buyPortal", "buyTime machine"]
 
 while True:
     try:
         cookie.click()
-        buy_available_item = driver.find_element(By.CSS_SELECTOR, "#store div[class='']")
-        buy_available_item.click()
+        buy_available_item = driver.find_elements(By.CSS_SELECTOR, "#store div[class='']")[-1]
+        available_item_id = buy_available_item.get_attribute("id")
+        if available_item_id in buy_items:
+            if last_bought_item != available_item_id:
+                buy_items.remove(last_bought_item)
+            buy_available_item.click()
+            last_bought_item = available_item_id
     except:
         pass
 
