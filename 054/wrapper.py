@@ -5,7 +5,7 @@ def call_twice(function):
     return wrapper_function
 
 def print_border(string):
-    def funcion_with_border(function):
+    def function_with_border(function):
         def wrapper(*args, **kwargs):
             border = string * 20
             print(border)
@@ -13,7 +13,7 @@ def print_border(string):
             print(border)
             return result
         return wrapper
-    return funcion_with_border
+    return function_with_border
 
 
 @print_border("@")

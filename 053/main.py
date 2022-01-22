@@ -82,7 +82,10 @@ def automate_data_entry(google_form_url, properties):
     driver = webdriver.Chrome(chrome_driver_path)
     driver.implicitly_wait(60)
 
-    for property in properties:
+    number_of_properties = len(properties)
+
+    for n, property in enumerate(properties):
+        print(f"Properties submitted: {n}/{number_of_properties}")
         driver.get(google_form_url)
         sleep(4)
         inputs = driver.find_elements(By.CSS_SELECTOR, "input[type=text]")
@@ -94,6 +97,9 @@ def automate_data_entry(google_form_url, properties):
         link_input.send_keys(property["link"])
         submit = driver.find_element(By.XPATH, "/html/body/div/div[2]/form/div[2]/div/div[3]/div[1]/div[1]/div/span/span")
         submit.click()
+    
+    print(f"Properties submitted: {number_of_properties}/{number_of_properties}")
+    print("All done.")
 
     driver.quit()
 
