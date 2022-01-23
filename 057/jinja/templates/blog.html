@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Blog</h1>
+{% for post in posts %}
+    {% if post["id"] == 2 %}
+    <h2>{{ post["title"] }}</h2>
+    <h3>{{ post["subtitle"] }}</h3>
+    {% endif %}
+{% endfor %}
+{% endblock %}
