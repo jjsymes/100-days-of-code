@@ -1,0 +1,173 @@
+body {
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
+nav {
+    margin-bottom: 1em;
+}
+
+button {
+    margin: 0.25em 0.25em 0.25em 0.25em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat';
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 3em;
+    line-height: 1.5;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+.navbar {
+    padding: 0 0 1em;
+}
+
+.nav-item {
+    padding: 0.7em;
+}
+
+.nav-link {
+    font-size: 1.1em;
+    font-family: 'Montserrat';
+}
+
+.headline {
+    margin-top: 0.3em;
+    margin-bottom: 1.5em;
+    size: 3.5em;
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+.navbar-brand {
+    font-size: 2em;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+}
+
+.container-fluid {
+    padding: 3% 15%;
+    padding-bottom: 5%;
+    margin-bottom: 3em;
+}
+
+.iphone-mockup {
+    transform: rotate(20deg);
+    height: 145%;
+    left: 10em;
+    top: 3em;
+    position: absolute;
+}
+
+.testimonial-image {
+    width: 15%;
+    border-radius: 100%;
+    margin: 3em 4em 3em 3em;
+}
+
+.carousel-item {
+    padding: 7% 5%;
+}
+
+.colored-section {
+    color: white;
+    background-color: #ff4c68;
+}
+
+.white-section {
+    color: black;
+    background-color: white;
+}
+
+#press {
+    background-color: #ef8172;
+    padding-bottom: 4%;
+}
+
+.press-logo {
+    width: 15%;
+    margin: 1.5em 1.5em 3em;
+}
+
+.pricing-column {
+    padding: 3% 2%;
+}
+
+#testimonials {
+    background-color: #ef8172;
+}
+
+#pricing {
+    padding: 5em;
+}
+
+#title {
+    text-align: left;
+    overflow: hidden;
+}
+
+#cta {
+    padding: 5%;
+}
+
+#cta h3 {
+    margin-bottom: 7% 5%;
+    font-size: 2.5em;
+    font-family: 'Montserrat';
+    font-weight: bold;
+}
+
+#footer {
+    padding-top: 7%;
+    padding-left: 5%;
+    padding-right: 5%;
+    line-height: 1.5em;
+
+}
+
+#footer i {
+    margin: 1em;
+}
+
+#features {
+    margin-top: 1em;
+    margin-bottom: 3em;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#features p {
+    color: #8f8f8f;
+    padding: 4%;
+}
+
+#features i {
+    font-size: 4em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: #ef8172;
+}
+
+#features i:hover {
+    color: #ff4c68;
+}
+
+@media (max-width: 1028px) {
+    .iphone-mockup {
+        position: static;
+        transform: rotate(0);
+        height: 500px;
+        margin-top: 3em;
+    }
+
+    #title {
+        text-align: center;
+    }
+}
