@@ -68,9 +68,20 @@ class Player:
                     player_symbol_count = symbols.count(self.symbol)
                     no_symbol_count = symbols.count(None)
                     opponent_symbol_count = 3 - player_symbol_count - no_symbol_count
-                    if player_symbol_count == 2 and no_symbol_count == 1 or opponent_symbol_count == 2 and no_symbol_count == 1:
-                        return y, x
-
+                    if player_symbol_count == 2 and no_symbol_count == 1:
+                        choices.append(
+                            {
+                                "cell": (y, x),
+                                "score": 12
+                            }
+                        )
+                    elif opponent_symbol_count == 2 and no_symbol_count == 1:
+                        choices.append(
+                            {
+                                "cell": (y, x),
+                                "score": 11
+                            }
+                        )
                     elif player_symbol_count == 1 and opponent_symbol_count == 0:
                         if self._cell_in_corner(y, x):
                             choices.append(
@@ -173,7 +184,7 @@ class TicTacToe:
             self._play_turn()
             winner = self._check_winner()
             if winner is not None:
-                self.active_player.score += 1
+                self.last_active_player.score += 1
                 self.active_cell = None
                 self.active_player = None
                 self.screen.display(
@@ -200,7 +211,7 @@ class TicTacToe:
         if self.active_player.is_ai == True:
             self._ai_turn()
             self.screen.display(self._render_frame())
-            if self.last_active_player.is_ai is True:
+            if self.active_player.is_ai is True:
                 sleep(1)
         else:
             input = self.controller.get_input()
