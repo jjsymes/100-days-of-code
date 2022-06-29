@@ -39,5 +39,19 @@ class Controller:
         first_char = getch()
         if first_char == '\x1b':
             return getch() + getch()
+        elif first_char == b'\xe0':
+            ch = getch()
+            if ch == "H":
+                return "[A"
+            elif ch == "P":
+                return "[B"
+            elif ch == "M":
+                return "[C"
+            elif ch == "K":
+                return "[D"
+            else:
+                return None
+        elif type(first_char) == bytes:
+            return None
         else:
             return first_char

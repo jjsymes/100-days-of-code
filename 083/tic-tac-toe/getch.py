@@ -4,7 +4,12 @@ import sys
 if sys.platform == 'win32':
     import msvcrt
     def getch():
-        return msvcrt.getch()
+        ch = msvcrt.getch()
+        try:
+            ch = ch.decode("UTF-8")
+        except UnicodeDecodeError:
+            pass
+        return ch
 else:
     import sys, tty, termios
     def getch():
