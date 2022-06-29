@@ -20,6 +20,7 @@ class Controller:
         'X': 'x',
         'O': 'o',
         'Q': 'quit',
+        ',': 'options',
         '\n': 'enter',
         '\r': 'enter',
         '\r\n': 'enter',
@@ -31,7 +32,7 @@ class Controller:
         try:
             return self.CONTROLLER_MAPPING[key]
         except KeyError:
-            return None
+            return key
 
 
     def _get_key(self):
